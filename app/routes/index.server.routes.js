@@ -6,3 +6,5 @@ module.exports = function(app){
   app.get('/contact', staticpagesController.renderContact);
   app.get('/users', usersController.index);
 };
+
+//travis test
