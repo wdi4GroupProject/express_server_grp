@@ -1,3 +1,10 @@
 language: node_js
 node_js:
 - node
+deploy:
+  provider: heroku
+  api_key:
+    secure: Uwe/hrffAvj2VMX1/HgOs98eLgp4yWfVP4OEGczKRj85pFaiddc4WVSpo4sH43WgqbG5BLilk5T2DSibcaPFw8Q1f8eJsHofwGONKFe/I6gwm676YRJk8CZtzwdJBrRB2+2/cZ7qXtr3zllwUlRrtiq/vU8/mcJqYEOeDjvBjyhH9p30vIy+1HQit1er07zM4Z5A5pAL5j9lxsQWB0Q8L6S9FhUnCOWh1cVo1fkcxSoXsYq69jpiHhE8M3aVRKsRaRBg3fOyOQ1LBECh5Xmd3NVjjdZxlSz1D4TWyMDUArWFa9CkaJiMfVv0WVMyaFz8D9kdvhXcRKbKp2AnR8FpGkFd5bwYx7mzudtvFZ1ZLh+ftY3fxLlKU1whW7tJJdhWIEcmK2ZSEGp5H/KREkuuoufPh4ZpAZj6Lw88Vs7ZPtWf4LiDgs39Ti8wA97WssQUcH8qK7JiiV1R+Cx4FgKIhotmI3rRtfvTORtoy10UO+QDkBYrD5HQ+h/so0U5N+xEAiQ2hJRBEpn6mTolplNeTqhNd7RVZO3JicDW7EO36tBsBSvRfCIms/eKbCDwPSzUIBBaTPGQQScjWRJfNTh92G39ftiPFH9IEtu6y1d3ck8ZsYy/9uEK+Hgem4sakvB5yiq4mn5vB2oOqb+UMRxtY4qsS+dtnfjQpp8yIvhbMf4=
+  app: morning-dusk-83442
+  on:
+    repo: wdi4GroupProject/express_server_grp
