@@ -3,8 +3,8 @@ var express   = require('express'),
     compress  = require('compression'),
     bodyParser = require('body-parser'),
     methodOverride = require('method-override'),
-    expressLayouts = require('express-ejs-layouts'),
-    cors = require('cors'); // for cross-origin issues
+    expressLayouts = require('express-ejs-layouts');
+    // cors = require('cors'); // for cross-origin issues
 
 module.exports = function(){
   var app = express();
