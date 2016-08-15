@@ -1,37 +1,21 @@
-require('../app');
-var request = require("request");
-var base_url = "http://localhost:8000/";
-var about_url = "http://localhost:8000/about";
-var contact_url = "http://localhost:8000/contact";
+var app = require('../app');
+var supertest = require("supertest");
 
-describe("Express Server", function() {
-  describe("GET /", function() {
-    it("returns status code 200", function(done) {
-      request.get( base_url,
-        function(err, response, body) {
-          expect( response.statusCode ).toBe(200);
-          done();
-        }
-    );
-    });
-  });
-  describe("GET /about", function(){
-    it("returns status code 200", function(done) {
-      request.get( about_url,
-        function(err, response, body){
-          expect( response.statusCode).toBe(200);
-          done();
-        });
-    });
-  });
-  describe("GET /contact", function(){
-    it("returns status code 200",
-    function(done) {
-      request.get( contact_url, function(err,response,body){
-        expect(response.statusCode).toBe(200);
-        done();
-      });
-    });
-  });
 
+describe("Express Server API", function() {
+  it('returns users json and 200 code', function(done) {
+    supertest(app)
+      .get('/users')
+      .set('Accept', 'application/json')
+      .expect('Content-Type', /json/)
+      .expect(200, done);
+  });
+});
+
+describe("Express Server API",function(){
+  it("returns 404 Page not found",function(done){
+    supertest(app)
+      .get('/members')
+      .expect(404,done);
+  });
 });

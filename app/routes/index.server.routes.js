@@ -5,4 +5,5 @@ module.exports = function(app){
   app.get('/about', staticpagesController.renderAbout);
   app.get('/contact', staticpagesController.renderContact);
   app.get('/users', usersController.index);
+  
 };

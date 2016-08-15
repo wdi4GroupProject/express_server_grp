@@ -1,5 +1,6 @@
 module.exports = {
   index: function(req, res){
+
     res.json(
       [{
         "name": "Chen Xin",
@@ -27,5 +28,6 @@ module.exports = {
         "number": "9389 3389"
       }]
     );
+
   }
 };
