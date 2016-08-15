@@ -3,7 +3,8 @@ var express   = require('express'),
     compress  = require('compression'),
     bodyParser = require('body-parser'),
     methodOverride = require('method-override'),
-    expressLayouts = require('express-ejs-layouts');
+    expressLayouts = require('express-ejs-layouts'),
+    cors = require('cors'); // for cross-origin issues
 
 module.exports = function(){
   var app = express();
@@ -13,6 +14,14 @@ module.exports = function(){
   } else if ( process.env.NODE_ENV === "production" ){
     app.use(compress());
   }
+
+  // resolve cross origin issues
+  var corsOptions = {
+    origin: '*'
+  };
+
+  app.use(cors(corsOptions));
+  app.options('*', cors()); //include before routes
 
   app.use(bodyParser.urlencoded({
     extended: true
@@ -26,6 +35,7 @@ module.exports = function(){
   app.use(expressLayouts);
 
   require('../app/routes/index.server.routes')(app);
+  require('../app/routes/member.server.routes')(app);
 
   app.use(express.static('./public'));
 
